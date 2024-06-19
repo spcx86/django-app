@@ -6,7 +6,7 @@ class HelloWorldView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        return Response({"message": "Hello, world!"})
+        return Response({"message": "Hello,,,, worldview gpt what up man!"})
 
 from django.shortcuts import redirect
 from django.http import JsonResponse

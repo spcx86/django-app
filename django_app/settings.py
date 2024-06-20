@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     'oauth2_provider',
+    'myapp',
 ]
 
 MIDDLEWARE = [
@@ -92,6 +93,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "django_app.wsgi.application"
+AUTH_USER_MODEL = 'myapp.CustomUser'
+
 
 
 # Database

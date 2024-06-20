@@ -2,6 +2,25 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
+
+# myapp/views.py
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+@api_view(['GET'])
+def whats_up(request):
+    user = request.user
+    if user.is_authenticated:
+        first_name = user.first_name
+        last_name = user.last_name
+        message = f"Hello {first_name} {last_name}! What's up"
+    else:
+        message = "Hello! What's up unauthenticated user"
+    return Response({"message": message})
+
 class HelloWorldView(APIView):
     permission_classes = [IsAuthenticated]
 

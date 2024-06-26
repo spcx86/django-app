@@ -36,7 +36,6 @@ SUPABASE_KEY = os.getenv("SUPABASE_API_KEY")
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_SECRET = os.getenv("GOOGLE_SECRET")
 
-
 # Application definition
 
 INSTALLED_APPS = [

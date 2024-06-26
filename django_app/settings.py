@@ -33,6 +33,8 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 SUPABASE_URL = os.getenv("SUPABASE_PROJECT_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_API_KEY")
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_SECRET = os.getenv("GOOGLE_SECRET")
 
 
 # Application definition
@@ -92,8 +94,8 @@ LOGOUT_REDIRECT_URL = '/'
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': 'your-google-client-id',
-            'secret': 'your-google-client-secret',
+            'client_id': GOOGLE_CLIENT_ID,
+            'secret': GOOGLE_SECRET,
             'key': ''
         }
     }

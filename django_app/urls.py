@@ -8,5 +8,6 @@ urlpatterns = [
     path('api/', include('myapp.urls')),
     path('callback/', callback, name='callback'),  # Add this line
     path('accounts/', include('allauth.urls')),
+    path('', include('django.contrib.auth.urls'))
 
 ]

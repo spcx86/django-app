@@ -35,6 +35,7 @@ SUPABASE_URL = os.getenv("SUPABASE_PROJECT_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_API_KEY")
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_SECRET = os.getenv("GOOGLE_SECRET")
+DOMAIN = os.getenv("APP_DOMAIN")
 
 # Application definition
 
@@ -96,9 +97,24 @@ SOCIALACCOUNT_PROVIDERS = {
             'client_id': GOOGLE_CLIENT_ID,
             'secret': GOOGLE_SECRET,
             'key': ''
+        },
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
         }
     }
 }
+
+from django.contrib.sites.models import Site
+
+def update_site_domain():
+    site = Site.objects.get(id=SITE_ID)
+    site.domain = 'seahorse-app-y4xut.ondigitalocean.app'
+    site.name = 'Your Site Name'
+    site.save()
 
 
 

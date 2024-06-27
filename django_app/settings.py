@@ -38,7 +38,6 @@ GOOGLE_SECRET = os.getenv("GOOGLE_SECRET")
 DOMAIN = os.getenv("APP_DOMAIN")
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -143,7 +142,8 @@ if DEVELOPMENT_MODE is True:
     }
 elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
     if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
+        print("")
+        # raise Exception("DATABASE_URL environment variable not defined")
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }

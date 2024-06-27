@@ -108,16 +108,6 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-from django.contrib.sites.models import Site
-
-def update_site_domain():
-    site = Site.objects.get(id=SITE_ID)
-    site.domain = 'seahorse-app-y4xut.ondigitalocean.app'
-    site.name = 'Your Site Name'
-    site.save()
-
-
-
 ROOT_URLCONF = "django_app.urls"
 
 TEMPLATES = [
